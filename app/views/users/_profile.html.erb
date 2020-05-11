@@ -28,6 +28,8 @@
 	<% end %>
 
 	<%if current_user.id != user.id %>
+		<%= link_to 'chatを始める', chat_path(user.id)%>
+		
 		<% if current_user.following?(user) %>
 			<%= link_to 'フォロー外す', unfollow_path(user.id), class:  "btn btn-primary btn-follow", method: :POST %>
 		<% else %>
