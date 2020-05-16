@@ -12,6 +12,9 @@ class ChatsController < ApplicationController
       UserRoom.create(user_id: current_user.id, room_id: @room.id)
       UserRoom.create(user_id: @user.id, room_id: @room.id)
     end
+    @chats = @room.chats
+    @chat = Chat.new(room_id: @room.id)
+  
   end
 end
 
